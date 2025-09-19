@@ -1,9 +1,10 @@
 🩺 Personalized Insulin Dosage Prediction Using Hybrid LSTM–GRU
 🚀 Project Overview
 
-This project proposes a Hybrid Deep Learning Framework for predicting personalized insulin dosages in diabetic patients. By combining LSTM and GRU layers with residual learning, the model captures both short-term glucose fluctuations and long-term physiological patterns.
+This project introduces a Hybrid Deep Learning Framework for predicting personalized insulin dosages in diabetic patients.
+By combining LSTM and GRU layers with residual learning, the model captures both short-term glucose fluctuations and long-term physiological patterns.
 
-The system processes the AIM94 diabetes dataset, performing advanced preprocessing and temporal feature engineering to transform irregular event logs into structured time-series suitable for deep learning models.
+The model processes the AIM94 dataset, applying advanced preprocessing and temporal feature engineering to transform irregular event logs into structured time-series suitable for deep learning.
 
 🔑 Key Highlights
 
@@ -11,51 +12,51 @@ The system processes the AIM94 diabetes dataset, performing advanced preprocessi
 
 🛠️ Advanced Preprocessing → Converts raw event-based records into structured multivariate time series.
 
-⏳ Sliding Window Modeling → Generates input-output sequences to forecast the next insulin dose.
+⏳ Sliding Window Modeling → Generates sequences to forecast insulin dosage.
 
-📈 Superior Performance → Achieved R² = 0.805, MAE = 1.29, and MSE = 3.27 — a significant improvement over baselines.
+📈 Superior Performance → Achieved R² = 0.805, MAE = 1.29, and MSE = 3.27, improving accuracy significantly compared to baselines.
 
 🎯 Objectives
 
-Predict regular insulin dosage with high accuracy using patient history.
+Predict regular insulin dosage with high accuracy.
 
-Encode temporal dependencies in glucose–insulin interactions.
+Model temporal dependencies in glucose–insulin interactions.
 
-Develop a scalable framework for clinical decision support in diabetes care.
+Provide a scalable decision-support tool for diabetes management.
 
-Explore hybrid recurrent architectures for biomedical sequence modeling.
+Explore hybrid architectures in biomedical time-series modeling.
 
 🧪 Preprocessing Pipeline
 
-The data preprocessing transforms raw medical logs into time-series suitable for modeling. Steps include:
+Steps followed to prepare the dataset:
 
-Data Cleaning → Handle missing values, standardize timestamps, and filter irrelevant codes.
+Data Cleaning → Remove missing/irrelevant entries and standardize timestamps.
 
-Event Pivoting → Expand event logs into structured features:
+Event Pivoting → Structure data into columns like:
 
-Glucose values
+Glucose readings
 
-Insulin dosages (Regular, NPH, UltraLente)
+Insulin doses (Regular, NPH, UltraLente)
 
 Food intake
 
 Hypoglycemia events
 
-Exercise logs
+Exercise
 
 Feature Engineering →
 
-Cyclical encoding of time-of-day (sine/cosine transformation)
+Cyclical encoding for time-of-day (sine/cosine)
 
-Lag features for past glucose/insulin levels
+Lag features for past glucose/insulin values
 
-Temporal markers (morning, afternoon, night)
+Temporal indicators (morning/evening/night)
 
-Binary indicators for events (food, activity, symptoms)
+Binary event flags
 
-Sequence Generation → Sliding windows create patient sequences for supervised learning.
+Sequence Generation → Create input sequences via sliding windows.
 
-Normalization → Min–Max scaling ensures stable convergence during training.
+Normalization → Apply Min–Max scaling for faster convergence.
 
 🔄 Data Transformation Example
 <div align="center">
@@ -65,22 +66,22 @@ Raw Event Log	→	Processed Time-Series Data
 </div>
 🏗️ Model Architecture
 
-The Hybrid Residual Model consists of:
+The Hybrid Residual Model includes:
 
 Stacked LSTM and GRU layers
 
-Residual skip connections for improved gradient flow
+Residual skip connections for stable gradient flow
 
-Batch Normalization & Dropout to prevent overfitting
+Batch Normalization and Dropout
 
-Dense layers for final regression output
+Dense output layers
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/d1efc10b-dec6-485b-b0f4-0d28330fc2f6" width="720"/> </div>
+<div align="center"> <img src="https://github.com/user-attachments/assets/d1efc10b-DEC6-485b-b0f4-0d28330fc2f6" width="720"/> </div>
 ⚙️ Algorithm Workflow
 <div align="center"> <img src="https://github.com/user-attachments/assets/b47e08d3-2884-466e-8806-a108f8bbdde8" width="850"/> </div>
 📊 Results & Evaluation
 
-Performance comparison against baseline models:
+Comparison with baseline models:
 
 <div align="center"> <img src="https://github.com/user-attachments/assets/49db5e3c-e6e3-4701-a86c-172c51c03765" width="600"/> </div>
 
@@ -90,19 +91,19 @@ MAE: 1.29 (↓ 10%)
 
 MSE: 3.27 (↓ 60%)
 
-🔭 Future Enhancements
+🔭 Future Work
 
-🔄 Multi-output prediction → Extend framework for NPH & UltraLente insulin types.
+🔄 Extend prediction to NPH and UltraLente insulin.
 
-🤖 Reinforcement Learning Integration → Adaptive dosage adjustment based on glucose trends.
+🤖 Add Reinforcement Learning for adaptive dosage adjustment.
 
-🎯 Attention/Transformers → Improve interpretability by focusing on critical time steps.
+🎯 Use Attention/Transformers for better interpretability.
 
-🌐 Cross-dataset validation → Evaluate robustness across multiple diabetes datasets.
+🌐 Validate across multiple diabetes datasets.
 
 📌 Final Hybrid Model
 
-The trained model integrating LSTM + GRU with residual connections is available here:
+The final trained model is available here:
 👉 Download Hybrid Model
 
-✨ This project demonstrates how hybrid deep learning models can enhance personalized healthcare, supporting clinicians in precise insulin dosage recommendations.
+✨ This project shows how hybrid deep learning can advance personalized healthcare by supporting clinicians in precise insulin dosage prediction.
